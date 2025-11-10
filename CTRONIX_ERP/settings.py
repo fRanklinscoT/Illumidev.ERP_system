@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-dlicf26j_d3u#_g!nce3*uuvj466^#@j45v&hx=hn3!(whxkq_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "illumidev-erp-system.onrender.com"
+]
 
 
 # Application definition
@@ -88,7 +90,8 @@ DATABASES = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Vite default port
+    "http://localhost:5173",# Vite default port
+    "https://system.illumidev.co.za/",
 ]
 
 # Password validation
