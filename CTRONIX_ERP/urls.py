@@ -1,8 +1,8 @@
 """
-URL configuration for CTRONIX_ERP project.
+CTRONIX_ERP URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+
+# A simple view function for the root URL
+def home_view(request):
+    return HttpResponse("Welcome to CTRONIX ERP System!")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/user', include('user.urls')),
-    path('api/finance', include('finance.urls')),
+    path('', home_view, name='home'), # This line handles the root URL
+    path('api/user/', include('user.urls')), # Example for including app URLs
+    path('api/finance/', include('finance.urls')), # Example for including app URLs
 ]
